@@ -511,6 +511,6 @@ def is_mock_mode() -> bool:
     현재 Mock 모드인지 확인합니다.
     
     Returns:
-        USE_MOCK 환경변수 값
+        USE_MOCK 환경변수 값 (실시간 확인)
     """
-    return USE_MOCK
+    return os.getenv("USE_MOCK", "false").lower() == "true"
